@@ -1,0 +1,11 @@
+import java.util.Scanner;
+
+public class j02booleanVariable {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String bool = scanner.nextLine();
+        if(bool.equals("True")) System.out.println("Yes");
+        if(bool.equals("False")) System.out.println("No");
+    }
+}
