@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class j04vowelOfDigit {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        String vowels = "aeiouy";
+        String result = "";
+
+        if(vowels.contains(input))result = "vowel";
+        else if(Character.isDigit(input.charAt(0)))result = "digit";
+        else result = "other";
+
+        System.out.println(result);
+    }
+}
