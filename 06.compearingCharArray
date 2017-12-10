@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class j06compareCharArrays {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String firstArray = scanner.nextLine();
+        String secondArray = scanner.nextLine();
+
+        int compResult = firstArray.compareTo(secondArray);
+
+        firstArray = firstArray.replaceAll(" ","");
+        secondArray = secondArray.replaceAll(" ","");
+
+        if(compResult < 0){
+            System.out.println(firstArray);
+            System.out.println(secondArray);
+        }else {
+            System.out.println(secondArray);
+            System.out.println(firstArray);
+        }
+    }
+}
+
