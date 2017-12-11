@@ -1,0 +1,32 @@
+import java.util.Scanner;
+
+public class j07maxSequenceOfEqualElements {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] elements = scanner.nextLine().split(" ");
+
+        int curLenght = 1;
+        int bestlenght = 1;
+        String bestStart = elements[0];
+        for (int i = 0; i < elements.length - 1; i++) {
+
+            String currentElement = elements[i];
+            String nextElement = elements[i + 1];
+
+            if(currentElement.equals(nextElement)){
+                curLenght++;
+
+                if(curLenght > bestlenght){
+                    bestlenght = curLenght;
+                    bestStart = currentElement;
+                }
+            }else {
+                curLenght = 1;
+            }
+        }
+        for (int i = 0; i < bestlenght; i++) {
+            System.out.print(bestStart + " ");
+        }
+    }
+}
