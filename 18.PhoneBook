@@ -1,0 +1,25 @@
+import java.util.HashMap;
+import java.util.Scanner;
+
+public class j18Phonebook {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        HashMap<String,String> phonebook = new HashMap<>();
+
+        while (true){
+            String[] command = scanner.nextLine().split(" ");
+            if(command[0].equals("END"))break;
+            if(command[0].equals("A")){
+                phonebook.put(command[1],command[2]);
+            }else if(command[0].equals("S")){
+                if(phonebook.containsKey(command[1])) {
+                    System.out.println(command[1]
+                            + " -> " + phonebook.get(command[1]));
+                }else {
+                    System.out.printf("Contact %s does not exist.%n",command[1]);
+                }
+            }
+        }
+    }
+}
