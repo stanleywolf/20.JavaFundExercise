@@ -1,0 +1,22 @@
+import java.util.Scanner;
+
+public class j15censorEmailAddress {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String email = scanner.nextLine();
+        String[] emailTokens = email.split("@");
+
+        int userNameLenght = emailTokens[0].length();
+        String replacement = "";
+
+        for (int i = 0; i < userNameLenght; i++) {
+            replacement += "*";
+        }
+        String domain = "@" + emailTokens[1];
+        replacement += domain;
+
+        String newText = scanner.nextLine().replaceAll(email,replacement);
+        System.out.println(newText);
+    }
+}
