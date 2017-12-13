@@ -1,0 +1,21 @@
+import java.util.Scanner;
+
+public class j14fitStringIn20Chars {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String input = scanner.nextLine();
+        if(input.length() > 20) {
+            for (int i = 0; i < 20; i++) {
+                System.out.print(input.charAt(i));
+            }
+        }else{
+            for (int i = 0; i < input.length(); i++) {
+                System.out.print(input.charAt(i));
+            }
+            for (int i = input.length(); i < 20; i++) {
+                System.out.print("*");
+            }
+        }
+    }
+}
