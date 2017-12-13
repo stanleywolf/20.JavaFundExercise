@@ -1,0 +1,29 @@
+import java.util.Scanner;
+
+public class j16UrlParser {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String url = scanner.nextLine();
+
+        String protocol = "";
+        int protEndIndex = url.indexOf("://");
+        if(protEndIndex > 0){
+            protocol = url.substring(0,url.indexOf("://"));
+            url = url.substring(protEndIndex + 3);
+        }
+        String server = "";
+        String resource = "";
+
+        int serEndIndex = url.indexOf("/");
+        if(serEndIndex < 0){
+            server = url;
+        }else {
+            server = url.substring(0,url.indexOf("/"));
+            resource = url.substring(serEndIndex + 1);
+        }
+        System.out.printf("[protocol] = \"%s\"\n",protocol);
+        System.out.printf("[server] = \"%s\"\n",server);
+        System.out.printf("[resource] = \"%s\"\n",resource);
+    }
+}
