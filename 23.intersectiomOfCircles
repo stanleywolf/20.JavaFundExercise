@@ -17,3 +17,54 @@ public class Circle {
         return radius;
     }
 }
+package j22IntersectionOfCircles;
+
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        String[] firstCircleData = scanner.nextLine().split(" ");
+        String[] secondCircleData = scanner.nextLine().split(" ");
+        Point centreC1 = new Point(Integer.parseInt(firstCircleData[0])
+                ,Integer.parseInt(firstCircleData[1]));
+        Circle c1= new Circle(centreC1,Integer.parseInt(firstCircleData[2]));
+        Point centreC2 = new Point(Integer.parseInt(secondCircleData[0])
+                ,Integer.parseInt(secondCircleData[1]));
+        Circle c2= new Circle(centreC2,Integer.parseInt(secondCircleData[2]));
+
+        boolean intersect = intersect(c1,c2);
+        if(intersect) System.out.println("Yes");
+        else System.out.println("No");
+    }
+    public static boolean intersect(Circle c1, Circle c2){
+        boolean chek = false;
+        double lenght = Math.sqrt(Math.pow(c1.getCenter().getX() - c2.getCenter().getX(),2) +
+                Math.pow(c1.getCenter().getY() - c2.getCenter().getY(),2));
+        if(lenght <= c1.getRadius() + c2.getRadius()){
+            chek = true;
+        }
+        return chek;
+    }
+}
+package j22IntersectionOfCircles;
+
+public class Point {
+
+    private int x;
+    private int y;
+
+    public Point(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+}
+
